@@ -6,7 +6,7 @@ import cors from 'cors';
 
 
 
-const server = new Server();
+const server = Server.instance;
 
 // Leer informacion enviadad en el cuerpo de la URL
 server.app.use(express.urlencoded({extended:true})); 
