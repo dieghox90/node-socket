@@ -3,7 +3,7 @@
 Esto es una aplicacion utilizando Node y Socket
 
 
-## Istalacion
+## Instalacion
 
 Reconstruir modulos de Node
 ```
