@@ -6,6 +6,8 @@ import http from 'http';
 
 import * as socket from '../sockets/sockets';
 
+
+
 export default class Server {
 
 
@@ -35,16 +37,24 @@ export default class Server {
 
   private escucharSockets() {
     console.log('Escuchando conexiones - sockets');
+
     this.io.on('connection', cliente => {
-      console.log('Cliente Conectado');
+    
+      //Conectar cliente
 
+      socket.conectarCliente(cliente);
 
+      
+      //Configurar Usuario
+      socket.configurarUsuario(cliente,this.io);
+      
       //Mensajes
       socket.mensaje(cliente,this.io);
 
 
       //Desconectar
       socket.desconectar(cliente);
+
 
     });
 
